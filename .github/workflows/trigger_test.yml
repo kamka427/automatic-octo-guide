@@ -30,6 +30,6 @@ jobs:
       - name: Get base SHA
         id: get_base_sha
         run: |
-          echo "We are$( [[ ${{ github.event_name }} == "pull_request" ]] && echo "in a pull request: ${{ github.event.pull_request.base.sha }}" || echo "on the main branch: $(git rev-parse HEAD~1)" )"
+          echo "We are $( [[ ${{ github.event_name }} == "pull_request" ]] && echo "in a pull request: ${{ github.event.pull_request.base.sha }}" || echo "on the main branch: $(git rev-parse HEAD~1)" )"
           BASE_SHA=$( [[ ${{ github.event_name }} == "pull_request" ]] && echo ${{ github.event.pull_request.base.sha }} || echo $(git rev-parse HEAD~1) )
           echo "$BASE_SHA"
